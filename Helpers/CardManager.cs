@@ -4,8 +4,6 @@
     using System.Collections.Generic;
     using System.Data.SQLite;
     using System.IO;
-    using System.Reflection;
-    using System.Windows.Forms;
 
     public class CardsManager
     {
@@ -29,13 +27,13 @@
                 m_cards = new Dictionary<int, CardInfos>();
                 string str2 = Path.Combine(Program.Config.LauncherDir, "cards.cdb");
                 if (!File.Exists(str2)) return;
-                SQLiteConnection connection = new SQLiteConnection("Data Source=" + str2);
+                var connection = new SQLiteConnection("Data Source=" + str2);
                 connection.Open();
                 SQLiteDataReader reader = new SQLiteCommand("SELECT id, alias, type, level, race, attribute, atk, def FROM datas", connection).ExecuteReader();
                 while (reader.Read())
                 {
                     int id = reader.GetInt32(0);
-                    CardInfos infos = new CardInfos(id)
+                    var infos = new CardInfos(id)
                     {
                         AliasId = reader.GetInt32(1),
                         Type = reader.GetInt32(2),
