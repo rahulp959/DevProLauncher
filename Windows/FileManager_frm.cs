@@ -1,32 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using DevProLauncher.Windows.Components;
 
 namespace DevProLauncher.Windows
 {
-    public partial class FileManager_frm : Form
+    public sealed partial class FileManagerFrm : Form
     {
-        public FileManager_frm()
+        private readonly FileManagerControl m_deckTab;
+        private readonly FileManagerControl m_replayTab;
+        public FileManagerFrm()
         {
             InitializeComponent();
             TopLevel = false;
             Dock = DockStyle.Fill;
             Visible = true;
 
-            FileManagerControl deckcontrol = new FileManagerControl("Decks", "deck/", ".ydk");
-            TabPage decktab = new TabPage("Decks");
-            decktab.Controls.Add(deckcontrol);
+            m_deckTab = new FileManagerControl("Decks", "deck/", ".ydk");
+            var decktab = new TabPage("Decks");
+            decktab.Controls.Add(m_deckTab);
             fileTabs.TabPages.Add(decktab);
 
-            FileManagerControl replaycontrol = new FileManagerControl("Replays", "replay/", ".yrp");
-            TabPage replaytab = new TabPage("Replays");
-            replaytab.Controls.Add(replaycontrol);
+            m_replayTab = new FileManagerControl("Replays", "replay/", ".yrp");
+            var replaytab = new TabPage("Replays");
+            replaytab.Controls.Add(m_replayTab);
             fileTabs.TabPages.Add(replaytab);
+        }
+
+        public void ApplyTranslations()
+        {
+            m_deckTab.ApplyTranslation();
+            m_replayTab.ApplyTranslation();
         }
     }
 }

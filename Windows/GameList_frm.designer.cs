@@ -1,7 +1,7 @@
 ﻿using DevProLauncher.Windows.Components;
 namespace DevProLauncher.Windows
 {
-    partial class GameList_frm
+    sealed partial class GameListFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -534,7 +534,7 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.94702F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 92.05298F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel4.Controls.Add(this.DeckSelect, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 240);
@@ -551,17 +551,17 @@ namespace DevProLauncher.Windows
             this.DeckSelect.FormattingEnabled = true;
             this.DeckSelect.Location = new System.Drawing.Point(13, 3);
             this.DeckSelect.Name = "DeckSelect";
-            this.DeckSelect.Size = new System.Drawing.Size(115, 21);
+            this.DeckSelect.Size = new System.Drawing.Size(113, 21);
             this.DeckSelect.TabIndex = 14;
             // 
-            // GameList_frm
+            // GameListFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(909, 383);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "GameList_frm";
+            this.Name = "GameListFrm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.GameServerSelect.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
